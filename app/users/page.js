@@ -22,7 +22,6 @@ export default function UsersPage() {
 
           <Link href={`/users/${user.id}`}>
             <button className="view-btn">View</button>
-            <button >Click</button>
           </Link>
         </div>
       ))}
