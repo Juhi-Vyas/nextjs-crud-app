@@ -28,14 +28,12 @@ export default function UserPage() {
     });
   }, [id]);
 
-  // ✅ Update user (OPTIMISTIC)
   const handleUpdate = async () => {
   const updatedUser = { ...user, ...form };
 
   setUser(updatedUser);
   setEditMode(false);
 
-  // 🔥 store locally
   localStorage.setItem(`user-${id}`, JSON.stringify(updatedUser));
 
   try {
@@ -45,9 +43,7 @@ export default function UserPage() {
   }
 };
 
-  // ✅ Delete user (OPTIMISTIC)
   const handleDelete = async () => {
-  // remove from localStorage
   localStorage.removeItem(`user-${id}`);
 
   router.push("/users");
